@@ -1,0 +1,62 @@
+{% extends 'login.html' %}
+{% block title %}
+    天天果园 · 注册会员
+{% endblock %}
+{% block style %}
+    <style>
+        .right {
+            margin-top: 20px;
+        }
+        span {
+            margin-left: 104px;
+        }
+    </style>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/register.js"></script>
+{% endblock %}
+{% block ctitle %}
+    注册会员
+{% endblock %}
+{% block topic %}
+    <a href="#" class='float'>会员登录</a>
+{% endblock %}
+{% block right %}
+    <form id="formReg" action='/register/' method='post'>
+        {% csrf_token %}
+        <!-- 第一行 -->
+        <div class="form-line">
+            <p>手机号</p>
+            <input type="number" name="uphone" class='form-control'>
+            <br>
+            <span id="uphone-tip"></span>
+        </div>
+        <!-- 第二行 -->
+        <div class="form-line">
+            <p>密码</p>
+            <input type="password" name="upwd" class='form-control'>
+        </div>
+        <!-- 第三行 -->
+        <div class="form-line">
+            <p>确认密码</p>
+            <input type="password" name="upwd" class='form-control'>
+        </div>
+        <!-- 第四行 -->
+        <div class="form-line">
+            <p>用户名</p>
+            <input type="test" name="uname" class='form-control'>
+        </div>
+        <!-- 第五行 -->
+        <div class="form-line">
+            <p>邮箱</p>
+            <input type="email" name="uemail" class='form-control'>
+        </div>
+        <!-- 最后 -->
+        <div class="form-line">
+            <p></p>
+            <div>
+                <input type="submit" name="un" value='注册' class='loginBtn'>
+                <a href="#" class='registBtn'>会员登录</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
